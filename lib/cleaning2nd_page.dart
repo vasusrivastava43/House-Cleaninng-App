@@ -22,8 +22,6 @@ class _cleaningState extends State<cleaning> {
   IconData icon5=Icons.check_box_outline_blank;
   Color iconcolor5=Colors.black;
   int flag=0;
-  int flag1=0;
-  int flag2=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,12 +120,12 @@ class _cleaningState extends State<cleaning> {
                                 if(icon2==Icons.check_box_outline_blank) {
                                   icon2 = Icons.check_box;
                                   iconcolor2=Colors.green;
-                                  flag1++;
+                                  flag++;
                                 }
                                 else{
                                   icon2=Icons.check_box_outline_blank;
                                   iconcolor2=Colors.black;
-                                  flag1--;
+                                  flag--;
                                 }
                               });},
                                   icon: Icon(icon2,color: iconcolor2,)),
@@ -204,12 +202,12 @@ class _cleaningState extends State<cleaning> {
                                   if(icon3==Icons.check_box_outline_blank) {
                                     icon3 = Icons.check_box;
                                     iconcolor3=Colors.green;
-                                    flag2++;
+                                    flag++;
                                   }
                                   else{
                                     icon3=Icons.check_box_outline_blank;
                                     iconcolor3=Colors.black;
-                                    flag2--;
+                                    flag--;
                                   }
                                 });
                               },
