@@ -83,6 +83,10 @@ class _signUpState extends State<signUp> {
                             fontSize: 18
                         )),
                     TextField(
+                      onChanged: (value) {
+                        email = value;
+                      },
+                      keyboardType: TextInputType.emailAddress,
                       style: TextStyle(color: Colors.white),
                       decoration: new InputDecoration(
                         enabledBorder: UnderlineInputBorder(
@@ -145,7 +149,7 @@ class _signUpState extends State<signUp> {
                                   child: Text('Sign up',
                                       style:
                                       TextStyle(color: Colors.white, fontSize: 20)),
-                                  color: Colors.cyan,
+                                  color: Colors.purple[400],
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30)),
                                   onPressed: () async {
@@ -155,7 +159,7 @@ class _signUpState extends State<signUp> {
                                               .instance
                                               .createUserWithEmailAndPassword(
                                                   email: email, password: password);
-                                      Navigator.pushNamed(context, '/home');
+                                      Navigator.pushNamed(context, '/address');
                                     } on FirebaseAuthException catch (e) {
                                       if (e.code == 'weak-password') {
                                         print('The password provided is too weak.');

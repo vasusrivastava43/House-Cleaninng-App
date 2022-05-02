@@ -43,6 +43,7 @@ class _signInState extends State<signIn> {
                   Text('Email',
                       style: TextStyle(fontSize: 18, color: Colors.white)),
                   TextField(
+                    keyboardType: TextInputType.emailAddress,
                     style: TextStyle(color: Colors.white),
                     onChanged: (value) {
                       email = value;
@@ -107,7 +108,7 @@ class _signInState extends State<signIn> {
                         child: Text('Log in',
                             style:
                                 TextStyle(color: Colors.white, fontSize: 20)),
-                        color: Colors.cyan,
+                        color: Colors.purple[400],
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         onPressed: () async {
@@ -116,7 +117,7 @@ class _signInState extends State<signIn> {
                                 .instance
                                 .signInWithEmailAndPassword(
                                     email: email, password: password);
-                            Navigator.pushNamed(context, '/home');
+                            Navigator.pushNamed(context, '/address');
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
                               print('No user found for that email.');
@@ -156,7 +157,7 @@ class _signInState extends State<signIn> {
                             'Sign Up',
                             style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
-                          color: Colors.cyan,
+                          color: Colors.purple[400],
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30)),
                         ),

@@ -1,11 +1,19 @@
-import 'home1.dart';
+import 'package:I_SHINE/carpenter2nd_page.dart';
+import 'package:I_SHINE/pumber2nd_page.dart';
+import 'splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'signin.dart';
 import 'signup.dart';
-import 'homePage.dart';
-import '2nd_page.dart';
+import 'cleaning2nd_page.dart';
+import 'calender.dart';
+import 'services.dart';
+import 'electician2nd_page.dart';
+import 'carpenter2nd_page.dart';
+import 'painter2nd_page.dart';
+import 'pumber2nd_page.dart';
+import 'address.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -31,10 +39,18 @@ void main() async {
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
     routes: {
-      '/':(context)=> front_page(),
+      '/':(context)=>SplashScreen(),
       '/In':(context)=> signIn(),
       '/Up':(context)=> signUp(),
-      '/home':(context)=>cleaning(),
+      '/home':(context)=>yrr(),
+      '/clean':(context)=>cleaning(),
+      '/calender':(context)=>cal(),
+      '/front':(context)=>front_page(),
+      '/electician':(context)=>electrician(),
+      '/carpenter':(context)=>Carpenter(),
+      '/painter':(context)=>Painter(),
+      '/plumber':(context)=>plumber(),
+      '/address':(context)=>Address(),
     },
   ));
 }
@@ -52,21 +68,12 @@ class _State extends State<front_page> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 40,),
-                Text('I - SHINE',
-                style: TextStyle(
-                color: Colors.white,
-                fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Ubuntu',
-                )
-                ),
-                SizedBox(height: 80,),
+                Image.asset('asset/image/ishinelogo5.png',height: 250,width: 270,),
                 Image.asset('asset/image/splash.png'),
                 SizedBox(height: 40,),
                 SizedBox(width: 200,
                   child: RaisedButton(onPressed: (){Navigator.pushNamed(context,'/In');},
-                      color: Colors.amberAccent[700],
+                      color: Colors.purple[400],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30)),
                       child: Text('Get Started',
